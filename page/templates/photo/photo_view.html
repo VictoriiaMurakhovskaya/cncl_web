@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}Сайт об'єднаної громади{% endblock %}
+{% block content %}
+ <h1 style="margin-bottom: 10px">{{ photo.title }}</h1>
+
+    <img src="{{ photo.image.url }}" width="97%" alt="Немає зображення">
+{% endblock %}

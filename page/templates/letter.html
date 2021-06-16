@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Сайт об'єднаної громади{% endblock %}
+{% block content %}
+    <h3>Написати листа</h3>
+<hr style="margin-bottom: 10px">
+    <form method="POST">
+        {% csrf_token %}
+
+    <table>
+        <label style="margin-top: 10px" for="name">Введіть ім'я: </label>
+        {{ form.name }}
+        <label style="margin-top: 10px" for="e_mail">E-mail: </label>
+        {{ form.e_mail }}
+        <label style="margin-top: 10px" for="body">Повідомлення: </label>
+        {{ form.body }}
+    </table>
+        <button type="submit">Відправити</button>
+    </form>
+{% endblock %}

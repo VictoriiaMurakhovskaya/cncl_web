@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Сайт об'єднаної громади{% endblock %}
+{% block content %}
+ <h2>Новини</h2>
+    <hr style="margin-bottom: 10px; margin-top: 5px">
+    {% for item in news %}
+        <h3 style="margin-bottom: 7px">{{ item.title }} ({{ item.publish }})</h3>
+        <p>{{ item.body }}</p>
+    {% endfor %}
+{% endblock %}

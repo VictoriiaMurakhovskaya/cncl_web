@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Сайт об'єднаної громади{% endblock %}
+{% block content %}
+    <h3>Накази</h3>
+<hr style="margin-bottom: 10px">
+        					<div class="mobile">
+						<table class="bordered">
+							<thead>
+								<tr>
+									<th>Дата наказу</th>
+									<th>Назва наказу</th>
+								</tr>
+							</thead>
+
+                            <tbody>
+                                {% for order in orders %}
+								<tr>
+									<td>{{ order.date_time | date:"d-m-Y H:i"}}</td>
+                                    <td>{{ order.title }}<a href={{order.get_absolute_url}}> >></a></td>
+								</tr>
+                                {% endfor %}
+							</tbody>
+						</table>
+					</div>
+{% endblock %}

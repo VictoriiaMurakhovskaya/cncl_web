@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Сайт об'єднаної громади{% endblock %}
+{% block content %}
+ <h2>Фотогалерея</h2>
+    <hr style="margin-bottom: 10px; margin-top: 5px">
+    <div class="item">
+        {% for photo in photos %}
+            <!--<h6 style="margin-bottom: 10px">{{ photo.title }}</h6>-->
+                 <a href="{{ photo.get_absolute_url }}">
+                    <img src="{% if photo.image %}{{ photo.image.url }}{% else %}{% static "img/img.jpg" %}{% endif %}"
+                         width="200"
+                         height="135"
+                         alt="Немає зображення">
+                 </a>
+
+         {% endfor %}
+    </div>
+{% endblock %}

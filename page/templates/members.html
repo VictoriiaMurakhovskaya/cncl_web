@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Сайт об'єднаної громади{% endblock %}
+{% block content %}
+    <h3>Склад ради</h3>
+<hr style="margin-bottom: 10px">
+ {% for member in members %}
+    <p class="member"><span class="gray">{{member.position}}</span> {{member.name}}</p>
+ {% endfor %}
+{% endblock %}

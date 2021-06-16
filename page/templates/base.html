@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <title>{% block title %}Малобізерська рада{% endblock %}</title>
+    <link type="text/css" href="{% static "css/style.css" %}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		<title>Шаблон сайта BradPitt | Адаптивный дизайн</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="header">
+				<div class="headerContent">
+					<ul class="nav">
+						<li><a href="/" class="active">Головна</a></li>
+                        <li><a href="/news">Новини</a></li>
+                        <li><a href="/map">Карта громади</a></li>
+                        <li><a href="/photos">Фотогалерея</a></li>
+                        <li><a href="/contacts">Контакти</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="content">
+				<div class="leftCol">
+                    <p style="text-align: center">
+                        <img src={% static "img/logo.png" %} alt="Logo">
+                    </p>
+                    <a  href="/" >
+                        <h3 style="text-align: center">Малобілозерська громада</h3>
+                    </a>
+                    <hr style="margin: 20px">
+					<ul class="leftNav">
+						<li><a href="/history">Історичні дані</a></li>
+						<li><a href="/members">Склад ради</a></li>
+						<li><a href="/schedule">Розклад слухань</a></li>
+						<li><a href="/orders">Розпорядження</a></li>
+                        <li><a href="/send_letter">Зворотній зв'язок</a></li>
+					</ul>
+				</div>
+				<div class="main">
+					<div class="row">
+                        {% block content %}
+                        {% endblock %}
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<p>&copy; Бедрик В., 2021</p>
+			</div>
+		</div>
+	</body>
+</html>
